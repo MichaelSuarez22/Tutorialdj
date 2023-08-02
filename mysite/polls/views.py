@@ -1,22 +1,27 @@
-#
-# from django.http import HttpResponse, HttpResponseRedirect
-# from django.template import loader
-# from django.http import Http404
+
+
+from django.http import HttpResponse, HttpResponseRedirect
+from django.template import loader
+from django.http import Http404
 from unittest import TestCase
+from django.urls import reverse
+from django.views import generic
+from django.utils import timezone
+from .models import Choice, Question
+from .tests import create_question
 
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
-#
-# from .models import Choice, Question
-#
-# #Parte 3: vistas y templates
-#
+
+from .models import Choice, Question
+
+
 # def index(request):
 #     return HttpResponse("Hello, world. You're at the polls index.")
 #
+#
 # def detail(request, question_id):
 #     return HttpResponse("You're looking at question %s." % question_id)
-#
 #
 #
 # def results(request, question_id):
@@ -41,10 +46,10 @@ from django.urls import reverse
 #     else:
 #         selected_choice.votes += 1
 #         selected_choice.save()
-#         # Always return an HttpResponseRedirect after successfully dealing
-#         # with POST data. This prevents data from being posted twice if a
-#         # user hits the Back button.
+#
 #         return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
+#
+#
 #
 # def detail(request, question_id):
 #     try:
@@ -54,13 +59,21 @@ from django.urls import reverse
 #     return render(request, "polls/detail.html", {"question": question})
 
 
-from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
-from django.views import generic
-from django.utils import timezone
-from .models import Choice, Question
-from .tests import create_question
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class IndexView(generic.ListView):
